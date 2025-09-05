@@ -30,3 +30,12 @@ To get flowbite  js add this in body at last
 //create a fragment in it and insert in to the other pages 
 and also we can replace some host tag(which can come under hot place)
 
+//in place of insert u can use replace and vice versa 
+//<div class="parent-fragment" th:fragment="parent">
+
+
+// u can imagine the fragment as a function here parent
+//now u can pass parameters in to itparent(x,y)
+<div class="parent-fragment" th:fragment="parent(x,y)">
+<h1>Value of x is <span th:text="${x}"></span></h1>
+th:replace="~{base :: parent('one','two')}
