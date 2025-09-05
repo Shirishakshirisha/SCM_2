@@ -39,3 +39,27 @@ and also we can replace some host tag(which can come under hot place)
 <div class="parent-fragment" th:fragment="parent(x,y)">
 <h1>Value of x is <span th:text="${x}"></span></h1>
 th:replace="~{base :: parent('one','two')}
+
+
+passing the element like div , p ....
+in about.html
+<div class="host-tag" th:replace="~{base :: parent(~{::div})}"></div>
+    <div>This is the dynamic content from the about page handler</div>
+
+    int base.html
+    <div class="parent-fragment" th:fragment="parent(content)">
+    <div th:text="${content}"></div>
+
+
+//passing through id
+ <div th:replace="~{base :: parent(~{::#second_content})}">
+        <section id="main_content">
+            <h2>This is the dynamic main content passing from services</h2>
+        </section>
+
+
+// passing through class
+    <div th:replace="~{base :: parent(~{::.third_content})}">
+<section class="third_content">
+            <h2>This is the dynamic third content passing from services</h2>
+        </section>

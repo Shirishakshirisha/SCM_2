@@ -8,7 +8,17 @@
 <body>
     <h1>Service page handler</h1>
     <hr />
-    <div class="host-tag" th:replace="~{base :: parent('services one','services two')}"></div>
-    <div class="host-tag" th:replace="~{base :: parent('services one','services two')}"></div>
-</body>
+    <div th:replace="~{base :: parent(~{::.third_content})}">
+        <section id="main_content">
+            <h2>This is the dynamic main content passing from services</h2>
+        </section>
+         <section id="second_content">
+            <h2>This is the dynamic second content passing from services</h2>
+        </section>
+        <section class="third_content">
+            <h2>This is the dynamic third content passing from services</h2>
+        </section>
+
+    </div>
+    </body>
 </html>
