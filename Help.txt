@@ -1,0 +1,32 @@
+npx tailwindcss -i ./src/main/resources/static/css/input.css -o ./src/main/resources/static/css/output.css --watch
+
+
+
+
+
+for taiwind inside any html file add this in head
+  <link href="/css/output.css" rel="stylesheet"> 
+
+
+// flowbit , so add this in head 
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+
+
+//
+
+To get flowbite  js add this in body at last 
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
+
+// 1:52 min 
+//adding thymeleaf fragments
+//we are using this because some content remains same for all the html pages 
+// instead of doing the same thing for every page 
+//Go to thymeleaf documenttaion 
+//thymeleaf page layouts
+//we have one common header file which has a content which is same 
+//create a fragment in it and insert in to the other pages 
+and also we can replace some host tag(which can come under hot place)
+
