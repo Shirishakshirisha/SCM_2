@@ -8,9 +8,10 @@
 <body>
     <h1>This is about page handler</h1>
     <hr />
-    
-    <!-- Define content fragments for each state -->
-<section th:fragment="logged_in">
+    <div class="host-tag"
+     th:replace="${isLogin} ? ~{base :: parent(~{::logged_in})} : ~{base :: test(~{::not_logged_in})}">
+
+     <section th:fragment="logged_in">
     <h1>User is logged in</h1>
     <h2>Dynamic content</h2>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -21,6 +22,10 @@
 <section th:fragment="not_logged_in">
     <h1>User is not logged in</h1>
 </section>
+
+</div>
+    
+    <!-- Define content fragments for each state -->
 
    
 </body>
