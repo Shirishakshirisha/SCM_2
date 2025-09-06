@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About ka title</title>
 </head>
+
 <body>
-    <h1>This is about page handler</h1>
-    <hr />
-    <div class="host-tag"
-     th:replace="${isLogin} ? ~{base :: parent(~{::logged_in})} : ~{base :: test(~{::not_logged_in})}">
-
-     <section th:fragment="logged_in">
-    <h1>User is logged in</h1>
-    <h2>Dynamic content</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-       Beatae, ea. Maxime similique eum, a harum culpa exercitationem vero.</p>
-    <button>Submit</button>
-</section>
-
-<section th:fragment="not_logged_in">
-    <h1>User is not logged in</h1>
-</section>
+    
+<div id="content">
+    <h1>Welcome to about page</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima optio 
+        ratione impedit at consectetur voluptatem corporis iure accusantium recusandae saepe?</p>
 
 </div>
-    
-    <!-- Define content fragments for each state -->
 
-   
+    <script>
+        console.log("About page script");
+    </script>
+    <script>
+        console.log(" another About page script");
+    </script>
 </body>
 </html>

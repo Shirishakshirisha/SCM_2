@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Services ka title</title>
+   
 </head>
-<body>
-    <h1>Service page handler</h1>
-    <hr />
-    <div th:replace="~{base :: parent(~{::.third_content})}">
-        <section id="main_content">
-            <h2>This is the dynamic main content passing from services</h2>
-        </section>
-         <section id="second_content">
-            <h2>This is the dynamic second content passing from services</h2>
-        </section>
-        <section class="third_content">
-            <h2>This is the dynamic third content passing from services</h2>
-        </section>
 
-    </div>
-    </body>
+<body>
+<section id="content">
+    <h1>Welcome to the services page</h1>
+    <h2>services offered by SCM</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, culpa?</p>
+</section>
+
+    <script>
+        console.log("Services page script");
+    </script>
+</body>
+
+
 </html>

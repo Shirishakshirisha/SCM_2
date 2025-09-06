@@ -1,15 +1,26 @@
-<!-- Parent fragment with dynamic content -->
-<div class="parent-fragment" th:fragment="parent(content)">
-    <h1>This is parent fragment</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Sit repellat unde minima ipsa veritatis non esse error velit quisquam.</p>
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content, title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">SCM</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="/css/output.css" rel="stylesheet"> <!-- Tailwind compiled CSS -->
+</head>
+<body>
+    <h1>Base page content</h1>
 
-    <!-- Insert the passed content -->
-    <div th:insert="${content}"></div>
-</div>
+    <!-- Common Header -->
 
-<!-- Test fragment with dynamic content -->
-<div th:fragment="test(content)">
-    <h1>This is test fragment</h1>
-    <div th:insert="${content}"></div>
-</div>
+    <!-- Main content -->
+    <section th:insert="${content}"></section>
+    <!-- flowbite ka content -->
+
+    <!-- Common Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js">
+    </script>
+<!-- Page-specific script -->
+    <th:block th:replace="${script}"></th:block>
+</body>
+</html>
