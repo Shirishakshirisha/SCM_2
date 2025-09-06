@@ -22,8 +22,9 @@ public class PageController {
 
     // about page handler
     @RequestMapping("/about")
-    public String about() {
+    public String about(Model model) {
         System.out.println("About handler");
+        model.addAttribute("isLogin", false);
         return "about"; 
     }
 

@@ -1,8 +1,15 @@
+<!-- Parent fragment with dynamic content -->
 <div class="parent-fragment" th:fragment="parent(content)">
     <h1>This is parent fragment</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit repellat unde minima ipsa veritatis non esse 
-        error velit quisquam. Harum beatae, accusantium iusto aut eaque quia ipsa itaque nihil velit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Sit repellat unde minima ipsa veritatis non esse error velit quisquam.</p>
 
-    <div th:replace="${content}"></div>
+    <!-- Insert the passed content -->
+    <div th:insert="${content}"></div>
+</div>
 
+<!-- Test fragment with dynamic content -->
+<div th:fragment="test(content)">
+    <h1>This is test fragment</h1>
+    <div th:insert="${content}"></div>
 </div>

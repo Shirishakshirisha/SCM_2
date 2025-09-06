@@ -8,14 +8,20 @@
 <body>
     <h1>This is about page handler</h1>
     <hr />
-    <div class="host-tag" th:replace="~{base :: parent(~{::section})}">
-         <section>
-        <h2>Dynamic content</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ea. 
-            Maxime similique eum, a harum culpa exercitationem vero. Pariatur, reprehenderit.</p>
-            <button>Submit</button>
-    </section>
-    </div>
+    
+    <!-- Define content fragments for each state -->
+<section th:fragment="logged_in">
+    <h1>User is logged in</h1>
+    <h2>Dynamic content</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+       Beatae, ea. Maxime similique eum, a harum culpa exercitationem vero.</p>
+    <button>Submit</button>
+</section>
+
+<section th:fragment="not_logged_in">
+    <h1>User is not logged in</h1>
+</section>
+
    
 </body>
 </html>

@@ -63,3 +63,58 @@ in about.html
 <section class="third_content">
             <h2>This is the dynamic third content passing from services</h2>
         </section>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is about page handler</h1>
+    <hr />
+    
+    <!-- Define content fragments for each state -->
+<section th:fragment="logged_in">
+    <h1>User is logged in</h1>
+    <h2>Dynamic content</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+       Beatae, ea. Maxime similique eum, a harum culpa exercitationem vero.</p>
+    <button>Submit</button>
+</section>
+
+<section th:fragment="not_logged_in">
+    <h1>User is not logged in</h1>
+</section>
+
+   
+</body>
+</html>
+
+base.htm
+
+<!-- Parent fragment with dynamic content -->
+<div class="parent-fragment" th:fragment="parent(content)">
+    <h1>This is parent fragment</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Sit repellat unde minima ipsa veritatis non esse error velit quisquam.</p>
+
+    <!-- Insert the passed content -->
+    <div th:insert="${content}"></div>
+</div>
+
+<!-- Test fragment with dynamic content -->
+<div th:fragment="test(content)">
+    <h1>This is test fragment</h1>
+    <div th:insert="${content}"></div>
+</div>
+
+
+-------------------------------------------------------------------------------------------------
+
+        2:30   THYMELEAF LAYOUTS
+        -------------------------------
+  https://www.thymeleaf.org/doc/articles/layouts.html
