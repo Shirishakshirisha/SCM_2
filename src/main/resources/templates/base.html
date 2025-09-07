@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html 
-class="dark"
+class="white"
 lang="en" th:fragment="parent(content, title,script)" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -27,8 +27,9 @@ lang="en" th:fragment="parent(content, title,script)" xmlns:th="http://www.thyme
         Footer: Smash with SHIRISHA K
      </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script data-th-src="@{'/js/script.js'}"></script>
+    
 <!-- Page-specific script -->
     <th:block th:replace="${script}"></th:block>
 </body>
