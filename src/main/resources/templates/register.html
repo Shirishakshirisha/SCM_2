@@ -43,7 +43,8 @@
 
             <!-- this is  form -->
              <form
-            data-th-action="@{/do-register}" method="post" 
+            th:action="@{/do-register}" method="post" 
+            th:object="${userForm}"
             class="my-5"
             >
               <!-- name  -->
@@ -57,7 +58,7 @@
                 <input
                   type="text"
                   id="name"
-                 
+                 th:field="*{Name}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter here"
                   required
@@ -77,6 +78,7 @@
                   
                   type="email"
                   id="email"
+                  th:field="*{email}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@flowbite.com"
                   required
@@ -94,6 +96,7 @@
                   
                   type="password"
                   id="password"
+                  th:field="*{password}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
@@ -110,6 +113,7 @@
                   
                   type="text"
                   id="phone"
+                  th:field="*{phoneNumber}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
@@ -125,7 +129,7 @@
                   >Write something about yourself</label
                 >
                 <textarea
-                  
+                  th:field="*{about}"
                   id="about"
                   rows="6"
                   class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

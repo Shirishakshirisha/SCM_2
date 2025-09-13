@@ -6,6 +6,8 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -32,9 +34,9 @@ public class User {
     @Column(unique = true, nullable=false)
     private String email;
     private String password;
-    @Column(length=10000)
+    @Column(length=1000)
     private String about;
-    @Column(length=6000)
+    @Column(length=1000)
     private String profilePic;
     private String phoneNumber;
     // other information
@@ -42,7 +44,7 @@ public class User {
     private boolean emailVerified = false;
     private boolean phoneVerified = false;
 
-
+    @Enumerated(value = EnumType.STRING)
     // SELF, GOOGLE, FACEBOOK, TWITTER, LINKDIN, GITHUB
     private Providers providers=Providers.SELF;
     private String providerUserId;
@@ -53,5 +55,10 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch=FetchType.LAZY,orphanRemoval = true)
     private List<SocialLink> links = new ArrayList<>();
+
+    public Object getRoles() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getRoles'");
+    }
     
 }
